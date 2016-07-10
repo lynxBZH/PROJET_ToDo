@@ -17,7 +17,7 @@
          <div class="contenu-liste">
             <div class="header-liste">
                 <button type="button" (click)="supprimerListe(liste)">X</button>
-                <h2>{{liste.titre}}</h2>
+                <h2 (click)="modifierTitre(liste)">{{liste.titre}}</h2> 
             </div>
         </div>
     </div>

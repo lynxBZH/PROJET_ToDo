@@ -44,9 +44,16 @@ export class ListeComponent implements OnInit {
     }
 
     // ajoute la nouvelle liste créée à la suite des autres listes affichées et referme le formulaire de création de liste
+    // met la liste à jour si elle existe déjà
     private validerListe() {
-        setTimeout(() => this.active = false, 0);
-        this._listeListes.push(this.listeEnCours);
+        let position = this._listeListes.indexOf(this.listeEnCours);
+        if(position === (-1)){
+            this._listeListes.push(this.listeEnCours);
+        } else{
+            this._listeListes[position].titre = this.listeEnCours.titre;
+        }
+        
+        setTimeout(() => this.active = false, 0);  
     }
 
     // permet de supprimer une liste
@@ -54,13 +61,17 @@ export class ListeComponent implements OnInit {
         let verif = confirm("Êtes vous sur de vouloir supprimer cette liste (et les tâches qu'elle contient) ?");
         if (verif) {
             this.listeEnCours = liste;
-            console.log(this.listeEnCours.id);
             for (let i = 0; i < this._listeListes.length; i++) {
                 if (this._listeListes[i] === this.listeEnCours) {
                     this._listeListes.splice(i, 1);
                 }
             }
         }
+    }
+    
+    private modifierTitre(liste:Liste){
+        this.active = true;
+        this.listeEnCours = liste;
     }
 
 }
