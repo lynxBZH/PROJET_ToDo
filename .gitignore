@@ -1,0 +1,8 @@
+/PROJET_ToDo/nbproject/private/
+/nbproject/private/
+*.js
+*.js.map
+*.log
+node_modules
+typings
+!systemjs.config.js

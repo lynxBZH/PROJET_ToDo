@@ -1,0 +1,20 @@
+<div class="row">
+    <button type="button" (click)="ajouterListe()">Ajouter une liste</button>
+    <div *ngIf="active">
+        <div class="form-group">
+            <label for="titre">Titre</label>
+            <input type="text" name="titre" [(ngModel)]="listeEnCours.titre">
+        </div>
+        <button type="button" (click)="validerListe()">Valider</button>
+        <button type="button" (click)="annulerListe()">Annuler</button>
+    </div>
+</div>
+
+<!-- affiche l'ensemble des listes existantes -->
+<div class="row">
+    <div class="bloc-liste col-md-4" *ngFor="let liste of _listeListes">
+         <div class="contenu-liste">
+            <h2>{{liste.titre}}</h2>
+        </div>
+    </div>
+</div>
