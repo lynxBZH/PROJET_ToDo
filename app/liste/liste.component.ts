@@ -22,9 +22,12 @@ export class ListeComponent implements OnInit {
     listeEnCours: Liste;
     active = false; // permet de gérer l'affichage du formulaire de création de liste
 
+    // permet d'afficher les listes existantes
     ngOnInit() {
-        // permet d'afficher les listes existantes
-        this._listeListes = this._listeService.getListes();
+        this._listeService.getListes()
+            .then(listes => {
+                this._listeListes = listes;
+                });
     }
 
     // permet d'afficher le formulaire de création d'une liste lorsqu'on clique sur le bouton "Ajouter une liste"
@@ -43,7 +46,19 @@ export class ListeComponent implements OnInit {
     // ajoute la nouvelle liste créée à la suite des autres listes affichées et referme le formulaire de création de liste
     private validerListe() {
         setTimeout(() => this.active = false, 0);
-        this._indiceEnCours = this._listeListes.push(this.listeEnCours) - 1;
+        this._listeListes.push(this.listeEnCours);
+    }
+    
+    // permet de supprimer une liste
+    private supprimerListe(liste : Liste) {
+        this.listeEnCours = liste;
+        console.log(this.listeEnCours.id);
+        for(let i = 0; i < this._listeListes.length;i++){
+            if (this._listeListes[i] === this.listeEnCours){
+                this._listeListes.splice(i,1);
+            }
+
+        }
     }
     
 }

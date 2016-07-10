@@ -7,7 +7,7 @@ export class ListeService {
     constructor() { }
 
     public getListes(){
-        return LISTES;
+        return Promise.resolve(LISTES);
     }
     
     public getListe(id:number){
