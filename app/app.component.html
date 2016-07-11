@@ -2,13 +2,12 @@
     <h1>TodoList</h1>
     <nav>
         <ul>
-            <li>Mes todos</li>
-            <li>Mon compte</li>
-            <li>Login</li>
+            <li><a [routerLink]="['todos']">Mes todos</a></li>
+            <li><a [routerLink]="['compte']">Mon compte</a></li>
         </ul>
     </nav>
 </header>
 <div id="page" class="col-md-9">
-    <todos class="col-md-12"></todos>
+    <router-outlet></router-outlet>
 </div>
 
