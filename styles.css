@@ -177,7 +177,7 @@ todos div.center{
 }
 
 /* listes */
-liste .formulaire{
+project .formulaire{
     margin-top: 10px;
 }
 
@@ -197,7 +197,7 @@ liste .formulaire{
     margin-right: 4px;
 }
 
-liste .contenu-liste{
+project .contenu-liste{
     margin: 0 auto;
     background-color: #45b39d;
     width: 90%;
@@ -206,14 +206,14 @@ liste .contenu-liste{
 
 /* taches */
 
-tache ul li{
+task ul li{
     list-style-type: none;
     width: 220px;
     padding: 10px;
     margin: 5px;
 }
 
-tache .selected{
+task .selected{
     background-color: white;
 }
 

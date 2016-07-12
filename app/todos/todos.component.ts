@@ -1,13 +1,13 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
-import { ListeComponent } from '../liste/liste.component';
-import { ListeService } from '../liste/liste.service';
+import { ProjectComponent } from '../project/project.component';
+import { ProjectService } from '../project/project.service';
 
 
 @Component({
     selector: 'todos',
     templateUrl: 'app/todos/todos.component.html',
-    directives : [ ListeComponent ],
-    providers: [ ListeService ]
+    directives : [ ProjectComponent ],
+    providers: [ ProjectService ]
 })
 
 export class TodosDetailComponent{

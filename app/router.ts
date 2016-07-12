@@ -1,16 +1,16 @@
 import { provideRouter, RouterConfig }  from '@angular/router';
 import { TodosDetailComponent } from './todos/todos.component';
-import { CompteDetailComponent } from './compte/compte.component';
+import { AccountDetailComponent } from './account/account.component';
 
 export const routes: RouterConfig = [
     {
         path: '',
-        redirectTo:'/compte',
+        redirectTo:'/account',
         pathMatch: 'full'
     },
     {
-        path:'compte',
-        component:CompteDetailComponent
+        path:'account',
+        component:AccountDetailComponent
     },
     {
         path:'todos',
